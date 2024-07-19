@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbreviation Finder</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Abbreviation Finder</h1>
+        <div class="form-group">
+            <label for="abbreviationInput">Enter Abbreviation:</label>
+            <input type="text" class="form-control" id="abbreviationInput" placeholder="e.g., SEO" oninput="findAbbreviation()" onkeyup="toUpperCaseInput()">
+        </div>
+        <div class="mt-3">
+            <h3 id="result"></h3>
+        </div>
+    </div>
+
+    <script>
+        const abbreviations = {
+            'SEO': 'Search Engine Optimization',
+            'SEM': 'Search Engine Marketing',
+            'PPC': 'Pay-Per-Click',
+            'SMM': 'Social Media Marketing',
+            'CRO': 'Conversion Rate Optimization',
+            'CTR': 'Click-Through Rate',
+            'SERP': 'Search Engine Results Page',
+            'B2B': 'Business-to-Business',
+            'B2C': 'Business-to-Consumer',
+            'DA': 'Domain Authority',
+            'PA': 'Page Authority',
+            'ALT': 'Alternative Text',
+            'HTML': 'Hypertext Markup Language',
+            'CSS': 'Cascading Style Sheets',
+            'JS': 'JavaScript',
+            'PHP': 'PHP: Hypertext Preprocessor',
+            'SQL': 'Structured Query Language',
+            'API': 'Application Programming Interface',
+            'HR': 'Human Resources',
+            'CV': 'Curriculum Vitae',
+            'KPI': 'Key Performance Indicator',
+            'L&D': 'Learning and Development',
+            'OD': 'Organizational Development',
+            'TA': 'Talent Acquisition',
+            'AP': 'Accounts Payable',
+            'AR': 'Accounts Receivable',
+            'COA': 'Chart of Accounts',
+            'P&L': 'Profit and Loss',
+            'ROI': 'Return on Investment',
+            'GL': 'General Ledger',
+            'PSD': 'Photoshop Document',
+            'AI': 'Adobe Illustrator',
+            'SVG': 'Scalable Vector Graphics',
+            'CMYK': 'Cyan, Magenta, Yellow, Key (Black)',
+            'RGB': 'Red, Green, Blue',
+            'UI': 'User Interface'
+        };
+
+        function findAbbreviation() {
+            const input = document.getElementById('abbreviationInput').value.trim().toUpperCase();
+            const result = abbreviations[input] || 'Abbreviation not found';
+            document.getElementById('result').innerText = result;
+        }
+
+        function toUpperCaseInput() {
+            const inputElement = document.getElementById('abbreviationInput');
+            inputElement.value = inputElement.value.toUpperCase();
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
